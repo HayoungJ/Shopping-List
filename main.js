@@ -8,12 +8,11 @@ const updateList = () => {
   const input = document.querySelector('input[type="text"]');
   const itemValue = input.value;
 
-  // 3. 편의성 업데이트
-
   if (itemValue !== '') {
     const item = createItem(itemValue);
     list.prepend(item);
     input.value = '';
+    input.focus();
   }
 };
 
