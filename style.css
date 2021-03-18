@@ -73,6 +73,12 @@ main > ul > li > button {
 
 main > ul > li > button > i {
   color: #434343;
+  transition: transform 0.1s ease-in-out;
+}
+
+main > ul > li > button:hover > i {
+  color: #dd2323;
+  transform: scale(1.1);
 }
 
 main > aside {
@@ -100,14 +106,20 @@ main > aside > button {
   position: relative;
 }
 
+main > aside > button:hover {
+  background-color: aliceblue;
+}
+
 main > aside > button::before {
   content: '';
   width: 6px;
   height: 30px;
   background: #434343;
   position: absolute;
-  top: 15px;
+  top: calc(50% - 15px);
   left: calc(50% - 3px);
+  transition: transform 0.1s ease-in-out;
+  backface-visibility: hidden;
 }
 
 main > aside > button::after {
@@ -117,7 +129,16 @@ main > aside > button::after {
   background: #434343;
   position: absolute;
   top: calc(50% - 3px);
-  left: 15px;
+  left: calc(50% - 15px);
+  transition: transform 0.1s ease-in-out;
+  backface-visibility: hidden;
+}
+
+main > aside > button:hover::before {
+  transform: scale(1.1);
+}
+main > aside > button:hover::after {
+  transform: scale(1.1);
 }
 
 /* digital accessibility */
